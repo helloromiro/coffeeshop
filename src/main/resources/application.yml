@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: coffeshop  # Название вашего приложения
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10  # Настройки пула соединений
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update  # update / validate / create / create-drop
+    show-sql: true  # Логирование SQL-запросов
+
+  sql:
+    init:
+      mode: always  # Выполнять SQL-скрипты при запуске приложения
+
+server:
+  port: 8080  # Порт, на котором работает приложение
