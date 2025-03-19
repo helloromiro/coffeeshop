@@ -1,6 +1,6 @@
 spring:
-  application:
-    name: coffeshop  # Название вашего приложения
+  profiles:
+    active: jpa  # "hibernate" "jpa"
 
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres
@@ -8,17 +8,17 @@ spring:
     password: postgres
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 10  # Настройки пула соединений
+      maximum-pool-size: 10
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update  # update / validate / create / create-drop
-    show-sql: true  # Логирование SQL-запросов
+      ddl-auto: update
+    show-sql: true
 
   sql:
     init:
-      mode: always  # Выполнять SQL-скрипты при запуске приложения
+      mode: always
 
 server:
-  port: 8080  # Порт, на котором работает приложение
+  port: 8080
